@@ -1,0 +1,101 @@
+body {
+	font-family: Calibri, Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+	font-family: Helvetica, sans-serif;
+	font-weight: lighter;
+}
+
+hr {
+	height: 1px;
+	border: none;
+	background-color: #E0E0E0;
+	width: 90%;
+}
+
+#preface {
+	background-color: rgb(7, 54, 66);
+	padding-top: 20px;
+}
+
+#prefaceLayer2 {
+	padding: 10px;
+	height: 160px;
+	background-color: rgb(39,179,217);
+	color: white;
+}
+
+#portrait {
+	float: left;
+	padding: 10px;
+	padding-top: 15px;
+	width: 130px;
+	height: 130px;
+}
+
+#nameLabel {
+	text-align: right;
+}
+
+#name {
+	font-size: 3em;
+	padding: 0;
+	padding-top: 10px;
+	margin: 0;
+	color: white;
+}
+
+#contactContainer>p {
+	font-size: 0.7em;
+	padding: 1px;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+.sectionContainer {
+	padding-top: 0;
+	margin-top: 0;
+	vertical-align: top;
+}
+
+h1.leftTitle {
+	color: rgb(220, 50, 47);
+	text-align: right;
+	display: inline-block;
+	width: 23%;
+	padding-right: 7%;
+	margin-top: 6px;
+	vertical-align: top;
+	font-size: 1.8em;
+	font-style: italic;
+	font-weight: lighter;
+}
+
+div.sectionRightContent {
+	display: inline-block;
+	width: 65%;
+	padding-top: 10px;
+}
+
+div.pieceContainer {
+	margin-bottom: 15px;
+	padding-right: 30px;
+}
+
+h2.pieceTitle {
+	color: rgb(0, 43, 54);
+	margin: 0;
+}
+
+p.description {
+	margin: 0;
+	padding-top: 3px;
+	font-style: italic;
+}
+
+ul.bulletList {
+	margin-top: 8px;
+	color: rgb(127,127,127);
+	padding-left: 15px;
+}

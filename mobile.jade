@@ -1,0 +1,159 @@
+mixin sectionWrapper(title)
+	hr
+	.sectionContainer
+		h1.leftTitle=title
+		.sectionRightContent
+			if block
+				block
+	br
+
+mixin piece(title, description, bulletList)
+	.pieceContainer
+		h2.pieceTitle #{title}
+		p.description  #{description}
+		ul.bulletList
+			- each bullet in bulletList
+				li=bullet
+
+
+doctype html
+html
+	head
+		title John Caveman's resume
+		//- Don't know why livereload not working when use include css rather than refer it
+		//- style(type='text/css')
+		//- 	include ../JADE/styles.css
+		link(rel='stylesheet' href='styles.css' type='text/css')
+
+	body
+		#preface
+			#prefaceLayer2
+				// img#portrait( src='http://d13yacurqjgara.cloudfront.net/users/10881/screenshots/1464059/tmi_1_teaser.gif' alt='too_many_idea_not_time')
+				#nameLabel
+					h1#name John Caveman
+					#contactContainer
+						a(href="mailto:selnteer@gmail.com") selnteer@gmail.com
+						p Tel. 0402 4190 89
+						p 319/299 Spring Street, VIC 3000
+		br
+		br
+
+		+sectionWrapper('Career Overview')
+			//+piece('', 'Innovative software engineer who makes application to meet people\'s real needs.', [])
+			+piece('', 'A software professional with 1 year\'s local experience as a fulltime junior software engineer. I worked with both server side and mobile client side technologies under an environment adopting Agile Methodology. I have a proven record of developing high quality and innovative software products. Recently I completed a Master of Computer Science and am now seeking a junior position', [])
+			
+		+sectionWrapper('Key Strengths')
+			+piece('Mobile Application Related',
+					//'Knowledge of both native and cross-platform',
+					'',
+					[
+					 'Solid knowledge of object oriented design',
+					 //- '1 years\' experience in Native iOS and Android development',
+					 '1.5 year experience in native iOS development',
+					 'Half a year\'s experience in cross-platform app development',
+					 'Proficient in Xcode, Instruments, ADT and Titanium toolchain',
+					 'Familiar with Agile tools such as JIRA, JENKINS and Unit Test Frameworks'
+					 ])
+
+			+piece('Web Application Related',
+					//'Experience of various technology stacks.',
+					'',
+					[
+					'Solid knowledge of HTML, CSS and Javascript',
+					'Experience of web development with J2EE and NodeJS',
+					'Experience of developing with MongoDB',
+					//- 'Experience of managing AWS instance via SSH',
+					//- 'Proficient in various developing tools such as Eclipse, Sublime etc.'
+					'Experience of Javascript toolchain such as Grunt, less, jade'
+					])
+			
+
+			//- +piece('Common Tools',
+			//- 		'Skilled in various of developing tools',
+			//- 		['IDEs including Eclipse, Xcode, Netbeans, Visual Studio etc',
+			//- 		 'Command line tools such as ssh, screen',
+			//- 		 'Agile/Collaboration tools like Git, JIRA and JENKINS',
+			//- 		 'NodeJS automation toolset such as Grunt'])
+			
+			+piece('Personality',
+					 //'Keen to learn and reach a higher level',
+					 '',
+					 [
+					  'Strong ability of analysis and problem solving',
+					  'Adaptable and responsible to produce high quality work',
+					  'A fast Learner and keen to learn',
+					  //- 'A wide range of interests of new technology and industry trends'
+					  'Bilingual in Chinese and English'
+					  ])
+
+		+sectionWrapper('Project Experience')
+
+			+piece('Goanna',
+					'A check-in app ensure security of people work for TAS council',
+					[
+					 'Responsible for developing motion detection feature',
+					 'Responsible for developing safety instruction menu',
+					 'Responsible for developing draggable UI feature',
+					 'Responsible for developing AWS S3 bucket sync feature',
+					 'Responsible for maintaining Android version',
+					 'Responsible for final polish and publish on AppStore',
+					 'Maintain related internal tools such as JENKINS, Tishadow'
+					 ])
+
+			+piece('iDriveSafe', 
+					'A series of iOS applications help people drive safer', 
+					[
+					 'Responsible for develop route recommendaton web API',
+					 'Participated in developing journey planner iOS app'
+					 ])
+
+			+piece('FeedCat',
+					'A web application collect and analysis user feedback',
+					[
+					'Responsible for developing heatmap and other data visualize feature',
+					'Responsible as MongoDB admin and developed aggregation functionality',
+					'Responsible for deploying and maintaining application on AWS'
+					])
+
+			+piece('StoreStock',
+					'A personal project helps manage cigarette stock',
+					[
+					 'Integrate with zxing Barcode scanner',
+					 'Handy features such as voice input and export history'
+					 ])
+
+			+piece('Entrepot',
+					'A web app to manage and push content to mobile clients',
+					[
+					 'Responsible for design and implement server side application',
+					 'Responsible for setup automation build/test environment'
+					 ])
+			
+
+		//- +sectionWrapper('Professional Experience')
+		//- 	+sectionWrapper('Test')
+		//- 		+piece('Entrepot',
+		//- 			'A NodeJS based web app to manage and sync content to mobile clients',
+		//- 			['Responsible for design and implement the system',
+		//- 			 'Responsible for setup automation build/test environment'])
+
+
+		+sectionWrapper('Curriculum Vitae')
+			+piece('Philology Pty. Ltd.', '2013.10 ~ 2014.3, Junior Software Developer', [])
+			+piece('RMIT University', '2011.2 ~ 2013.12, Master of Computer Science with Distinction', [])
+			+piece('Macau University of Science and Technology', '2006.9 ~ 2010.6, Bachelor of Computer Science', [])
+
+		//- +sectionWrapper('Referees')
+		//- 	+piece('Philip Cookson', 
+		//- 			'Director of Research and CEO of Philology Pty. Ltd.',
+		//- 			['Email: philip@philology.com.au',
+		//- 			'Tel. 0409 9798 61'])
+		//- 	+piece('Dr. Andy Song', 
+		//- 			'RMIT Lecturer and Director of iDriveSafe Project',
+		//- 			['Email: andy.song@rmit.edu.au',
+		//- 			'Tel. +61 3 9925 9761'])
+		//- 	+piece('Peter Crawford, Willy and Karl Grieser',
+		//- 			'Supervisors of Feedcat Project from Sensis Pty. Ltd.',
+		//- 			['Details refer to the attachment'])
+		
+		//- script(src='//localhost:35729/livereload.js')  // not working for local file
