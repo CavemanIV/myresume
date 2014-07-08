@@ -2,6 +2,10 @@ module.exports = function(grunt) {
     'use strict';
 
     var LIVERELOAD_PORT = 35729;
+    var HTML_OUTPUT = "Mobile_JohnCaveman.html";
+
+    var resumes = {};
+    resumes[HTML_OUTPUT] = 'mobile.jade';
 
     grunt.initConfig({
         connect: {
@@ -18,23 +22,36 @@ module.exports = function(grunt) {
                 options: {
                     pretty: true
                 },
-                files: {
-                    "Mobile_JohnCaveman.html": "mobile.jade"
-                }
+                files: resumes
             }
         },
         watch: {
             editing: {
                 files: ['mobile.jade', 'styles.css'],
-                tasks: ['jade'],
+                tasks: ['jade', 'spell'],
                 options: {
                     livereload: LIVERELOAD_PORT
                 }
             }
+        },
+        open: {
+            dev: {
+                path: "http://localhost:8000/" + HTML_OUTPUT
+            }
+        },
+        spell: {
+            html: {
+                src: [HTML_OUTPUT],
+                options: {
+                    lang: 'en',
+                    ignore: ['complex expression']
+                }
+            }
+
         }
     })
 
     require('matchdep').filter('grunt-*').forEach( grunt.loadNpmTasks );
 
-    grunt.registerTask('default', ['jade', 'connect', 'watch']);
+    grunt.registerTask('default', ['jade', 'connect', 'spell', 'open', 'watch']);
 };
