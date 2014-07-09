@@ -84,7 +84,7 @@ div.pieceContainer {
 }
 
 h2.pieceTitle {
-	color: rgb(0, 43, 54);
+	color: rgb(61,187,221);
 	margin: 0;
 }
 
@@ -92,6 +92,7 @@ p.description {
 	margin: 0;
 	padding-top: 3px;
 	font-style: italic;
+	color: rgb(0, 43, 54);
 }
 
 ul.bulletList {

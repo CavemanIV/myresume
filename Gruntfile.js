@@ -2,10 +2,10 @@ module.exports = function(grunt) {
     'use strict';
 
     var LIVERELOAD_PORT = 35729;
-    var HTML_OUTPUT = "Mobile_JohnCaveman.html";
+    var HTML_OUTPUT = "JohnCaveman's resume.html";
 
-    var resumes = {};
-    resumes[HTML_OUTPUT] = 'mobile.jade';
+    var resumeSource = {};
+    resumeSource[HTML_OUTPUT] = 'resume.jade';
 
     grunt.initConfig({
         connect: {
@@ -22,12 +22,12 @@ module.exports = function(grunt) {
                 options: {
                     pretty: true
                 },
-                files: resumes
+                files: resumeSource
             }
         },
         watch: {
             editing: {
-                files: ['mobile.jade', 'styles.css'],
+                files: ['resume.jade', 'styles.css'],
                 tasks: ['jade', 'spell'],
                 options: {
                     livereload: LIVERELOAD_PORT
